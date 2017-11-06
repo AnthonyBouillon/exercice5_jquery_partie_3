@@ -17,25 +17,37 @@
 <script>
 //Le 'e' detecte la touche
 $(function() {
+  //keypress = maintenir la touche
     $('input').keypress(function(touch) {
+      //renvoie la touche pressé || connaitre la touche enfoncé
         var apply = touch.which || touch.keyCode;
+        // 39 = droite
           if (apply == 39) {
             $('div').css('margin-left', '+=10px');
+            // 37 = gauche
           }else if (apply == 37) {
             $('div').css('margin-left', '-=10px');
+            // 40 = bas
           }else if (apply == 40) {
             $('div').css('margin-top', '+=10px');
+            // 38 = haut
           }else if (apply == 38) {
             $('div').css('margin-top', '-=10px');
+            // sinon rien ne se passe
           }else {
           }
+          // si il atteind 1900 pixel a gauche , revenir a 0px à gauche
            if ($('div').offset().left >= 1900) {
              $('div').css('margin-left', '0px');
-           }else if ($('div').offset().left <= -60) {
-             $('div').css('margin-left', '1850px');
+             // - 70 par rapport à la position de ma div qui est de 70 px
+           }else if ($('div').offset().left <= -70) {
+             // 1900 - 70 car la div fait 70 de largeur
+             $('div').css('margin-left', '1830px');
+             // 980 + 100 = 1080
          }else if ($('div').offset().top >= 980) {
-             $('div').css('margin-top', '0px');
-           }else if ($('div').offset().top <= -60) {
+             $('div').css('margin-top', '-100px');
+             // - 70 par rapport à la position de ma div qui est de 70 px
+           }else if ($('div').offset().top <= -70) {
              $('div').css('margin-top', '940px');
            }else {
            }
