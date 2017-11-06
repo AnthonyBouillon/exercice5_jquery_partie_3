@@ -11,7 +11,7 @@
   <form>
     <input type="text" name="text" id="text"/>
   </form>
-  <div id="figure"></div>
+  <div></div>
 </body>
 <!-- JQUERY -->
 <script>
@@ -20,23 +20,23 @@ $(function() {
     $('input').keypress(function(touch) {
         var apply = touch.which || touch.keyCode;
           if (apply == 39) {
-            $('div').css('margin-left' , '+=10px');
+            $('div').css('margin-left', '+=10px');
           }else if (apply == 37) {
-            $('div').css('margin-left' , '-=10px');
+            $('div').css('margin-left', '-=10px');
           }else if (apply == 40) {
-            $('div').css('margin-top' , '+=10px');
+            $('div').css('margin-top', '+=10px');
           }else if (apply == 38) {
-            $('div').css('margin-top' , '-=10px');
+            $('div').css('margin-top', '-=10px');
           }else {
           }
            if ($('div').offset().left >= 1900) {
-             $('div').css('margin-left' , '0px');
-           }else if ($('div').offset().left <= 4) {
-             $('div').css('margin-left' , '1900px');
-         }else if ($('div').offset().top >= 1080) {
-             $('div').css('margin-top' , '0px');
-           }else if ($('div').offset().top <= 4) {
-             $('div').css('margin-top' , '1080px');
+             $('div').css('margin-left', '0px');
+           }else if ($('div').offset().left <= -60) {
+             $('div').css('margin-left', '1850px');
+         }else if ($('div').offset().top >= 980) {
+             $('div').css('margin-top', '0px');
+           }else if ($('div').offset().top <= -60) {
+             $('div').css('margin-top', '940px');
            }else {
            }
          });
@@ -45,10 +45,8 @@ $(function() {
   <!-- CSS -->
   <style>
   /*Position de la div ainsi que de sa couleur*/
-#figure
-{
+div{
   height:70px;
-  margin-top:210px;
   width:70px;
   background:#800000;
 }
